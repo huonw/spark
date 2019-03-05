@@ -2167,6 +2167,18 @@ object functions {
     new Murmur3Hash(cols.map(_.expr))
   }
 
+  /**
+    * Calculates the 64-bit hash code of given columns, and returns the result as a long
+    * column.
+    *
+    * @group misc_funcs
+    * @since 2.4.1
+    */
+  @scala.annotation.varargs
+  def hash64(cols: Column*): Column = withExpr {
+    new XxHash64(cols.map(_.expr))
+  }
+
   //////////////////////////////////////////////////////////////////////////////////////////////
   // String functions
   //////////////////////////////////////////////////////////////////////////////////////////////

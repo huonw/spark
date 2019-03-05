@@ -597,7 +597,7 @@ case class XxHash64(children: Seq[Expression], seed: Long) extends HashExpressio
 
   override def dataType: DataType = LongType
 
-  override def prettyName: String = "xxHash"
+  override def prettyName: String = "hash64"
 
   override protected def hasherClassName: String = classOf[XXH64].getName
 
